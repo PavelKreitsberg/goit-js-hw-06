@@ -12,3 +12,13 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const collImg = document.querySelector('.gallery');
+
+collImg.style = 'padding-left: 0px; display: flex; flex-direction: column; justify-content: space-between ';
+
+
+images.forEach(value => {
+  collImg.insertAdjacentHTML('afterbegin',
+    `<img src = ${value.url} alt = ${value.alt}>`)
+})
