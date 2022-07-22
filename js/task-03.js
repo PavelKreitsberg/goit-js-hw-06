@@ -17,8 +17,8 @@ const collImg = document.querySelector('.gallery');
 
 collImg.style = 'padding-left: 0px; display: flex; flex-direction: column; justify-content: space-between ';
 
+const html = images.reduce((acc, value) => {
 
-images.forEach(value => {
-  collImg.insertAdjacentHTML('afterbegin',
-    `<img src = ${value.url} alt = ${value.alt}>`)
-})
+  return acc += `<li><img src = ${value.url} alt = ${value.alt}></li>`}, '')
+
+collImg.insertAdjacentHTML('afterbegin', html)
