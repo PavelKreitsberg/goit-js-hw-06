@@ -14,14 +14,20 @@ const box = document.querySelector('#boxes')
 
 // Control
 
-createBtn.addEventListener('click', (event) => {
+const createBoxes = (amount) => {
   let str = '';
 
-  for (let i = 0; i < Number(input.value); i += 1) {
+  for (let i = 0; i < amount; i += 1) {
      str += `<div class='box--color' style='width: ${30 + i * 10}px; height: ${30 + i * 10}px; background-color: ${getRandomHexColor()}'></div>`;
   }
   
   box.innerHTML = str;
+
+}
+
+createBtn.addEventListener('click', (event) => {
+  createBoxes(Number(input.value))
+  
 })
 
 destroyBtn.addEventListener('click', (event) => {
