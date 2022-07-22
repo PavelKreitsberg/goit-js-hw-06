@@ -9,9 +9,6 @@ const ingredients = [
 
 const list = document.querySelector('#ingredients')
 
-ingredients.map(value => {
-  const el = document.createElement('li');
-  el.textContent = value;
-  el.className = 'item';
-  list.append(el)
-})
+const html = ingredients.reduce((acc, value) => acc += `<li>${value}</li>`, '')
+
+list.insertAdjacentHTML('afterbegin', html)
